@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 1607301791}
   - component: {fileID: 1607301793}
   m_Layer: 0
-  m_Name: FPS Controller
+  m_Name: FPSController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,6 +870,7 @@ MonoBehaviour:
   jumpSpeed: 8
   jumpHeight: 3
   gravity: -9.8
+  gravityMultipler: 4
   playerCamera: {fileID: 1879481663}
   lookSpeed: 10
   lookXLimit: 90

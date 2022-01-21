@@ -9,6 +9,7 @@ public class FPSController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float jumpHeight = 3f;
     public float gravity = -9.8f;
+    public float gravityMultipler = 4f;
     public Camera playerCamera;
     public float lookSpeed = 10f;
     public float lookXLimit = 90f;
@@ -56,11 +57,11 @@ public class FPSController : MonoBehaviour
 
         // handle jump
         if (Input.GetButtonDown("Jump") && isGrounded){
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity * gravityMultipler);
         }
 
         // apply gravity
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * gravityMultipler * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
         // Player and Camera rotation

@@ -475,14 +475,14 @@ MonoBehaviour:
   jumpHeight: 3
   gravity: -9.8
   gravityMultipler: 4
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 921953681092103780}
   lookSpeed: 10
   lookXLimit: 90
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 921953679512550478}
   groundDis: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 9
   canLook: 1
   canMove: 1
   weapon: {fileID: 134499291822677368}

@@ -79,5 +79,6 @@ public class FPSController : MonoBehaviour
 
     public void addWeapon(){
         weapon.SetActive(true);
+        GetComponent<AudioSource>().Play();
     }
 }

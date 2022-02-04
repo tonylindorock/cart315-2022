@@ -19,6 +19,10 @@ public class Collectable : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.tag == "Player"){
             Debug.Log("Touched");
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            FPSController script = player.GetComponent<FPSController>();
+            script.addWeapon();
+            transform.parent.gameObject.GetComponent<Trigger>().Triggered();
             Destroy(transform.parent.gameObject);
         }
     }

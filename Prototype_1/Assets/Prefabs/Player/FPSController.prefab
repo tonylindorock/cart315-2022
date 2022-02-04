@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &762804643839444930
 Transform:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 921953680390892026}
   m_Layer: 0
   m_Name: FPSController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -485,6 +485,7 @@ MonoBehaviour:
     m_Bits: 0
   canLook: 1
   canMove: 1
+  weapon: {fileID: 134499291822677368}
 --- !u!1 &921953681092103783
 GameObject:
   m_ObjectHideFlags: 0

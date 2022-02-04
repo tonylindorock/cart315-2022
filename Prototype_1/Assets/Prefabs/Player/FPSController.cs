@@ -28,6 +28,8 @@ public class FPSController : MonoBehaviour
     public bool canLook = true;
     public bool canMove = true;
 
+    public GameObject weapon;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -73,5 +75,9 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
+    }
+
+    public void addWeapon(){
+        weapon.SetActive(true);
     }
 }

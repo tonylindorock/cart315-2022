@@ -7,6 +7,10 @@ public class FPSController : MonoBehaviour
     public float walkSpeed = 7.5f;
     public float runSpeed = 11.5f;
     public float jumpSpeed = 8.0f;
+    public float acceleration = 0.6f;
+
+    float speed = 0f;
+
     public float jumpHeight = 3f;
     public float gravity = -9.8f;
     public float gravityMultipler = 4f;
@@ -28,7 +32,7 @@ public class FPSController : MonoBehaviour
     public bool canLook = true;
     public bool canMove = true;
 
-    public GameObject weapon;
+    Vector3 externalForce;
 
     void Start()
     {
@@ -36,6 +40,10 @@ public class FPSController : MonoBehaviour
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void FixedUpdate() {
+        externalForce = Vector3.zero;
     }
 
     void Update()
@@ -66,6 +74,8 @@ public class FPSController : MonoBehaviour
         velocity.y += gravity * gravityMultipler * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        controller.Move(externalForce * Time.deltaTime);
+
         // Player and Camera rotation
         if (canLook){
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
@@ -77,8 +87,7 @@ public class FPSController : MonoBehaviour
         }
     }
 
-    public void addWeapon(){
-        weapon.SetActive(true);
-        GetComponent<AudioSource>().Play();
+    public void AddForce(Vector3 force){
+        externalForce = force;
     }
 }

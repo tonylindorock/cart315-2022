@@ -21,8 +21,7 @@ public class Collectable : MonoBehaviour
             Debug.Log("Touched");
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             FPSController script = player.GetComponent<FPSController>();
-            script.addWeapon();
-            transform.parent.gameObject.GetComponent<Trigger>().Triggered();
+            
             Destroy(transform.parent.gameObject);
         }
     }

@@ -32,8 +32,6 @@ public class FPSController : MonoBehaviour
     public bool canLook = true;
     public bool canMove = true;
 
-    Vector3 externalForce;
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -42,9 +40,6 @@ public class FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void FixedUpdate() {
-        externalForce = Vector3.zero;
-    }
 
     void Update()
     {
@@ -74,8 +69,6 @@ public class FPSController : MonoBehaviour
         velocity.y += gravity * gravityMultipler * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        controller.Move(externalForce * Time.deltaTime);
-
         // Player and Camera rotation
         if (canLook){
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
@@ -85,9 +78,5 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
-    }
-
-    public void AddForce(Vector3 force){
-        externalForce = force;
     }
 }

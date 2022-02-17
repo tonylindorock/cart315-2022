@@ -5,32 +5,30 @@ using UnityEngine;
 public class PushPlayer : MonoBehaviour
 {
     public float pushPower = 50.0f;
-    Rigidbody body;
-    Vector3 pushDir = new Vector3();
 
-    // Start is called before the first frame update
+    CharacterController character;
+
+    public float mass = 3.0f; 
+    private Vector3 impact = Vector3.zero; // character momentum 
+    
+    
     void Start()
     {
-        body = GetComponent<Rigidbody>();
+        character = GetComponent<CharacterController>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (impact.magnitude > 0.2){ // if momentum > 0.2...
+            character.Move(impact * Time.deltaTime);
+        }
+        // impact vanishes to zero over time
+        impact = Vector3.Lerp(impact, Vector3.zero, 5 * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision hit) {
-        if (hit.collider.tag == "Player"){
-
-            /*if (body.velocity.y < -0.3){
-                return;
-            }*/
-
-            pushDir = new Vector3(body.velocity.x, 1f, body.velocity.z);
-
-            hit.gameObject.GetComponent<FPSController>().AddForce(pushDir * pushPower);
-            Debug.Log(pushDir * pushPower);
-        }
+    public void AddForce(Vector3 force){
+        Vector3 dir = force.normalized;
+        dir.y = 1f;
+        impact += dir.normalized * force.magnitude / mass;
     }
 }

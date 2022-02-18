@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextManager : MonoBehaviour
+public class Clock : MonoBehaviour
 {
+    float sec = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,15 +15,7 @@ public class TextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void Hide(){
-        GetComponent<Text>().enabled = false;
-    }
-
-    public void Show(){
-        GetComponent<Text>().enabled = true;
-        Debug.Log("Show Text!");
+        sec += Time.deltaTime;
+        GetComponent<Text>().text = "" + (int)sec;
     }
 }

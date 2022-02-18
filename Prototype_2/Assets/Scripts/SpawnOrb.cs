@@ -18,11 +18,11 @@ public class SpawnOrb : MonoBehaviour
     }
 
     public void SpawnNewOrb(){
-        GameObject orbObj = Instantiate(orb, RandomPointInBox(GetComponent<BoxCollider>().bounds), Quaternion.identity);
+        GameObject orbObj = Instantiate(orb, RandPointInBox(GetComponent<BoxCollider>().bounds), Quaternion.identity);
         orbObj.GetComponent<Collectable>().setTrigger(this.gameObject);
     }
 
-    public static Vector3 RandomPointInBox(Bounds bounds) {
+    public Vector3 RandPointInBox(Bounds bounds) {
     return new Vector3(
         Random.Range(bounds.min.x, bounds.max.x),
         Random.Range(bounds.min.y, bounds.max.y),

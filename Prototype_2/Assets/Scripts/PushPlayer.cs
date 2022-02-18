@@ -11,7 +11,7 @@ public class PushPlayer : MonoBehaviour
     public float mass = 3.0f; 
     private Vector3 impact = Vector3.zero; // character momentum 
     
-    
+    // adapted from https://answers.unity.com/questions/502798/object-push-character-controller.html
     void Start()
     {
         character = GetComponent<CharacterController>();

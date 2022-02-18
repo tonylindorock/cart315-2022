@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    GameObject spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +17,16 @@ public class Collectable : MonoBehaviour
         
     }
 
+    public void setTrigger(GameObject obj){
+        spawn = obj;
+    }
+
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.tag == "Player"){
-            Debug.Log("Touched");
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            FPSController script = player.GetComponent<FPSController>();
-            
-            Destroy(transform.parent.gameObject);
+            if (spawn != null){
+                spawn.GetComponent<TriggerEvent>().StartEvent();
+            }
+            Destroy(this.gameObject);
         }
     }
 }

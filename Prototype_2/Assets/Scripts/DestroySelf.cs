@@ -22,4 +22,10 @@ public class DestroySelf : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    void OnTriggerEnter(Collider other){
+        if (other.gameObject.tag == "DestroyArea"){
+            Destroy(this.gameObject);
+        }
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
+    float sec = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,8 @@ public class TextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        sec += Time.deltaTime;
+        GetComponent<Text>().text = "" + (int)sec;
     }
 
     public void Show(){

@@ -20,6 +20,7 @@ public class SpawnOrb : MonoBehaviour
     public void SpawnNewOrb(){
         GameObject orbObj = Instantiate(orb, RandPointInBox(GetComponent<BoxCollider>().bounds), Quaternion.identity);
         orbObj.GetComponent<Collectable>().setTrigger(this.gameObject);
+        GetComponent<AudioSource>().Play();
     }
 
     public Vector3 RandPointInBox(Bounds bounds) {

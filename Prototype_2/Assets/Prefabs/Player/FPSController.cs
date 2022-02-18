@@ -10,6 +10,7 @@ public class FPSController : MonoBehaviour
     public float acceleration = 0.6f;
 
     float speed = 0f;
+    public float airSpeed = 4f;
 
     public float jumpHeight = 3f;
     public float gravity = -9.8f;

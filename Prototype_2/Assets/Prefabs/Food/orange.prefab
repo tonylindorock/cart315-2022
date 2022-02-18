@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 20
+  despawnParticle: {fileID: 4233589014212669380, guid: e8233aeb77c7549a3993abe41ace7701, type: 3}
 --- !u!114 &1735050619043581297
 MonoBehaviour:
   m_ObjectHideFlags: 0

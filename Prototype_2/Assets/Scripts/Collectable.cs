@@ -26,6 +26,7 @@ public class Collectable : MonoBehaviour
             if (spawn != null){
                 spawn.GetComponent<TriggerEvent>().StartEvent();
             }
+            GameObject.Find("Health").GetComponent<Health>().AddHealth(15f);
             Destroy(this.gameObject);
         }
     }

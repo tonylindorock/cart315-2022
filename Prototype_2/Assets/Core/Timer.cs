@@ -21,11 +21,13 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time >= 0f){
+        if (time > 0f){
             time -= Time.deltaTime;
         }else{
-            done = true;
-            CallFunc();
+            if (!done){
+                done = true;
+                CallFunc();
+            }
         }
     }
 

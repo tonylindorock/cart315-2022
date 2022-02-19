@@ -415,7 +415,7 @@ MonoBehaviour:
   gravity: -9.8
   gravityMultipler: 4
   playerCamera: {fileID: 921953681092103780}
-  lookSpeed: 5
+  lookSpeed: 4
   lookXLimit: 90
   groundCheck: {fileID: 921953679512550478}
   groundDis: 0.4

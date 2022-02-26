@@ -421,7 +421,7 @@ MonoBehaviour:
   groundDis: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 152
   canLook: 1
   canMove: 1
 --- !u!82 &3393896055675778473

@@ -16,6 +16,7 @@ public class FPSController : MonoBehaviour
     public float gravity = -9.8f;
     public float gravityMultipler = 4f;
     public Camera playerCamera;
+    public Camera weaponCamera;
     public float lookSpeed = 10f;
     public float lookXLimit = 90f;
 
@@ -70,14 +71,24 @@ public class FPSController : MonoBehaviour
         velocity.y += gravity * gravityMultipler * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        HandleLook();
+        HandleFire();
+    }
+
+    private void HandleLook(){
         // Player and Camera rotation
         if (canLook){
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
 
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+    }
+
+    private void HandleFire(){
+        if(Input.GetButtonDown("Fire1")){
+            GetComponent<FPSRaycast>().Shoot();
         }
     }
 }

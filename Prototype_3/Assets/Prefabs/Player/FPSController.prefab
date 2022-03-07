@@ -429,7 +429,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e8318c9fd4c4e039b68df1fda6c936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100
   fpsCamera: {fileID: 921953681092103782}
 --- !u!82 &3393896055675778473
 AudioSource:

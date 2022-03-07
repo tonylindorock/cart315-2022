@@ -33,6 +33,7 @@ public class FPSController : MonoBehaviour
 
     public bool canLook = true;
     public bool canMove = true;
+    public bool canAct = true;
 
     void Start()
     {
@@ -87,8 +88,10 @@ public class FPSController : MonoBehaviour
     }
 
     private void HandleFire(){
-        if(Input.GetButtonDown("Fire1")){
-            GetComponent<FPSRaycast>().Shoot();
+        if (canAct){
+            if(Input.GetButtonDown("Fire1")){
+                GetComponent<FPSRaycast>().Shoot();
+            }
         }
     }
 }

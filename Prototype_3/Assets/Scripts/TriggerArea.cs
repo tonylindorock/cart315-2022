@@ -22,7 +22,7 @@ public class TriggerArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.tag == "Player"){
-            Debug.Log("In Area");
+            //Debug.Log("In Area");
             GetComponent<Trigger>().Triggered();
         }
     }

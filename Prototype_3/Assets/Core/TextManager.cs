@@ -18,10 +18,10 @@ public class TextManager : MonoBehaviour
     }
 
     public void Hide(){
-        GetComponent<Text>().enabled = false;
+        GetComponent<CanvasRenderer>().SetAlpha(0f);
     }
 
     public void Show(){
-        GetComponent<Text>().enabled = true;
+        GetComponent<CanvasRenderer>().SetAlpha(1f);
     }
 }

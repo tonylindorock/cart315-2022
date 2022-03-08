@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NoGoArea : MonoBehaviour
 {
@@ -12,9 +13,11 @@ public class NoGoArea : MonoBehaviour
 
     private bool carHidden = false;
 
+    private GameObject plot;
+
     void Start()
     {
-        
+        plot = GameObject.Find("Plot");
     }
 
     // Update is called once per frame
@@ -40,13 +43,15 @@ public class NoGoArea : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").transform.position = pos;
 
         if (canAdvance){
-            advance();
+            Advance();
         }
     }
 
-    public void advance(){
+    public void Advance(){
         GameObject text = GameObject.Find("TextThought");
         text.GetComponent<TextAnim>().Fade(1);
+
+        text.GetComponent<TextMeshProUGUI>().text = plot.GetComponent<Plot>().Advance();
 
         if (!carHidden){
             GameObject.Find("FiatStrada_low").SetActive(false);

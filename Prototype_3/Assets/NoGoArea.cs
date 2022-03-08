@@ -10,6 +10,8 @@ public class NoGoArea : MonoBehaviour
 
     public bool canAdvance = false;
 
+    private bool carHidden = false;
+
     void Start()
     {
         
@@ -43,6 +45,12 @@ public class NoGoArea : MonoBehaviour
     }
 
     public void advance(){
+        GameObject text = GameObject.Find("TextThought");
+        text.GetComponent<TextAnim>().Fade(1);
 
+        if (!carHidden){
+            GameObject.Find("FiatStrada_low").SetActive(false);
+            carHidden = true;
+        }
     }
 }

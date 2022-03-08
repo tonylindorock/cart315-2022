@@ -50,22 +50,25 @@ public class FPSController : MonoBehaviour
         // update directions
         float x = 0f;
         float z = 0f;
-        x = Input.GetAxis("Horizontal");
-        z = Input.GetAxis("Vertical");
+        if(canMove){
+            x = Input.GetAxis("Horizontal");
+            z = Input.GetAxis("Vertical");
+        }
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = (transform.right * x + transform.forward * z) * walkSpeed;
 
-        // Move the controller
-        controller.Move(move * walkSpeed * Time.deltaTime);
+        velocity.x = move.x;
+        velocity.z = move.z;
 
         // if on ground
-        if (isGrounded && controller.isGrounded && velocity.y < 0f) {
-            velocity.y = -2f;
+        if (isGrounded && velocity.y < 0f) {
+            canMove = true;
         }
 
         // handle jump
         if (Input.GetButtonDown("Jump") && isGrounded){
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity * gravityMultipler);
+            canMove = false;
         }
 
         // apply gravity

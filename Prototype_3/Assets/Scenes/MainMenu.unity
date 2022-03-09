@@ -508,9 +508,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'End
+  m_text: 'The
 
-    Less'
+    Road'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 984756af14bf64bef9361f1306e76e98, type: 2}
   m_sharedMaterial: {fileID: -5369785007229590656, guid: 984756af14bf64bef9361f1306e76e98, type: 2}

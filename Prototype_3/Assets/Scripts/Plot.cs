@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Plot : MonoBehaviour
 {
-    private int id = 0;
+    private int id = 21;
     private bool finished;
 
     public enum Type {NONE, INT, FLOAT, BOOL, STRING};

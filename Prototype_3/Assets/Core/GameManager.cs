@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public GameObject canvas;
+    public GameObject player;
+    public GameObject soundManager;
+
+    private AudioSource[] bgMusic;
+    private AudioSource music;
 
     private GameObject image;
     private float a;
@@ -15,6 +20,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         image = GameObject.Find("Canvas/Bg");
+        bgMusic = soundManager.GetComponents<AudioSource>();
+        foreach (AudioSource audio in bgMusic){
+            if (audio.clip.name == "music_light"){
+                music = audio;
+            }
+        }
     }
 
     void Update(){
@@ -24,7 +35,7 @@ public class GameManager : MonoBehaviour
                 a = Mathf.Clamp(a, 0f, 1f);
                 image.GetComponent<Image>().color = new Color(1f, 1f, 1f, a);
 
-                if (a == 1f){
+                if (a == 1f && !music.isPlaying){
                     GetComponent<Timer>().StartTimer();
                     startAnim = false;
                 }

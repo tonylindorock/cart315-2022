@@ -198,14 +198,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4944089458786851372, guid: 1d699964430d54a4c944890f562e6947, type: 3}
-      propertyPath: m_Volume
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4944089458786851372, guid: 1d699964430d54a4c944890f562e6947, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6288529873879280364, guid: 1d699964430d54a4c944890f562e6947, type: 3}
       propertyPath: m_Cameras.Array.size
       value: 1
@@ -218,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Cameras.Array.data[0]
       value: 
       objectReference: {fileID: 1307471302}
+    - target: {fileID: 6340057676512465846, guid: 1d699964430d54a4c944890f562e6947, type: 3}
+      propertyPath: m_Name
+      value: AudioSource
+      objectReference: {fileID: 0}
     - target: {fileID: 6843923900493713171, guid: 1d699964430d54a4c944890f562e6947, type: 3}
       propertyPath: Loop
       value: 1
@@ -270,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b0612cfcba8049adb3ef9b8669d9205, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.674
+      value: -13.53
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4b0612cfcba8049adb3ef9b8669d9205, type: 3}
       propertyPath: m_LocalRotation.w
@@ -540,6 +536,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 971125458}
+  player: {fileID: 2031616829}
+  soundManager: {fileID: 1650170227}
 --- !u!4 &143897597
 Transform:
   m_ObjectHideFlags: 0
@@ -2899,7 +2897,7 @@ MonoBehaviour:
   - Maybe I'm gonna run forever
   - Maybe I should try again\nTo leave this place?
   - But how?\nI can't go backwards
-  - I'll return to the road if I try to cut through the field
+  - I'll always return to the road\nif I try to cut through the field
   - All I can do is going forward\nYet nothing changes
   - All I have are my thoughts\nmy mind
   - I want to give up\nBut it changes nothing
@@ -2912,7 +2910,7 @@ MonoBehaviour:
   - There's no light to guide me\nAnd the world is full of darkness
   - Maybe it's okay to stay\nMaybe this place is not bad after all
   - I don't want to go
-  - Stop
+  - So stop
   - 'Stop fighting '
   - Stop trying
   - No
@@ -3131,6 +3129,11 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!1 &1650170227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6340057676512465846, guid: 1d699964430d54a4c944890f562e6947, type: 3}
+  m_PrefabInstance: {fileID: 12489455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1686720082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,6 +3958,11 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1 &2031616829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 921953680390891973, guid: 1d699964430d54a4c944890f562e6947, type: 3}
+  m_PrefabInstance: {fileID: 12489455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2057061929
 GameObject:
   m_ObjectHideFlags: 0

@@ -473,9 +473,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   credits:
-  - The world has fallen
-  - Machines now walk the earth
-  - It is the fall of humanity
+  - This is my journey
+  - No matter what keep going forward
+  - Even if it changes nothing
   - 
 --- !u!114 &1420781110
 MonoBehaviour:
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   func: GoToScene
   val: 2
-  valType: 0
+  valType: 1
 --- !u!114 &1667368985
 MonoBehaviour:
   m_ObjectHideFlags: 0

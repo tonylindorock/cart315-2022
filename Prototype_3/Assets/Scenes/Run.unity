@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 921953680390892027, guid: 1d699964430d54a4c944890f562e6947, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.18
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 921953680390892027, guid: 1d699964430d54a4c944890f562e6947, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2904,8 +2904,8 @@ MonoBehaviour:
   - All I have are my thoughts\nmy mind
   - I want to give up\nBut it changes nothing
   - I'm still gonna be here anyway
-  - But why not keeping going?
-  - Why not keeping fighting?
+  - So why not keep going?
+  - Why not keep fighting?
   - If there's anything I can do\nI'll do it
   - But the world is\nhopeless
   - And I am\npowerless
@@ -2915,8 +2915,9 @@ MonoBehaviour:
   - Stop
   - 'Stop fighting '
   - Stop trying
-  - This is my journey
-  - And it's time to wake up
+  - No
+  - This is my journey\nAnd I can do whatever I want
+  - So wake up
 --- !u!4 &1506146281
 Transform:
   m_ObjectHideFlags: 0

@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextAnim : MonoBehaviour
+public class CanvasElement : MonoBehaviour
 {
     private float a = 1f;
     private int animId = -1;
+
+    public bool visibilty = true;
     // Start is called before the first frame update
     void Start()
     {
+        if (!visibilty){
+            a = 0f;
+        }
     }
 
     // Update is called once per frame
@@ -20,7 +25,7 @@ public class TextAnim : MonoBehaviour
             a += 0.4f * Time.deltaTime;
         }
         a = Mathf.Clamp(a, 0f, 1f);
-        GetComponent<CanvasRenderer>().SetColor(new Color(1f, 1f, 1f, a));
+        GetComponent<CanvasRenderer>().SetAlpha(a);
     }
 
     public void Fade(int id){

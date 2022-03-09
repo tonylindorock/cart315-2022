@@ -9,15 +9,23 @@ public class NoGoArea : MonoBehaviour
     public enum Axis {X, Y, Z};
     public Axis keepAxis;
 
+    public float rotatePlayerY;
+
     public bool canAdvance = false;
 
     private bool carHidden = false;
 
     private GameObject plot;
+    private GameObject text;
 
     void Start()
     {
         plot = GameObject.Find("Plot");
+        text = GameObject.Find("TextThought");
+        
+        if (canAdvance){
+             text.GetComponent<TextMeshProUGUI>().text = plot.GetComponent<Plot>().GetCurrentText();
+        }
     }
 
     // Update is called once per frame
@@ -41,6 +49,7 @@ public class NoGoArea : MonoBehaviour
                     break;
             }
         GameObject.FindGameObjectWithTag("Player").transform.position = pos;
+        GameObject.FindGameObjectWithTag("Player").transform.Rotate(new Vector3(0f, rotatePlayerY, 0f));
 
         if (canAdvance){
             Advance();
@@ -48,10 +57,13 @@ public class NoGoArea : MonoBehaviour
     }
 
     public void Advance(){
-        GameObject text = GameObject.Find("TextThought");
         text.GetComponent<TextAnim>().Fade(1);
 
         text.GetComponent<TextMeshProUGUI>().text = plot.GetComponent<Plot>().Advance();
+
+        if (plot.GetComponent<Plot>().IsFinished()){
+            GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().EndGame();
+        }
 
         if (!carHidden){
             GameObject.Find("FiatStrada_low").SetActive(false);

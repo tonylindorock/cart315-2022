@@ -8,6 +8,7 @@ TagManager:
   - TriggerArea
   - ForceObject
   - DestroyArea
+  - GameManager
   layers:
   - Default
   - TransparentFX

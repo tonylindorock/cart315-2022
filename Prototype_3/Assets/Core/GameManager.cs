@@ -20,10 +20,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         image = GameObject.Find("Canvas/Bg");
-        bgMusic = soundManager.GetComponents<AudioSource>();
-        foreach (AudioSource audio in bgMusic){
-            if (audio.clip.name == "music_light"){
-                music = audio;
+        if (soundManager != null){
+            bgMusic = soundManager.GetComponents<AudioSource>();
+            foreach (AudioSource audio in bgMusic){
+                if (audio.clip.name == "music_light"){
+                    music = audio;
+                }
             }
         }
     }

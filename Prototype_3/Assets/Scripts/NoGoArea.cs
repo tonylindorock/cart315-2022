@@ -51,13 +51,15 @@ public class NoGoArea : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").transform.position = pos;
         GameObject.FindGameObjectWithTag("Player").transform.Rotate(new Vector3(0f, rotatePlayerY, 0f));
 
+        text.GetComponent<TextAnim>().Fade(1);
+
         if (canAdvance){
             Advance();
         }
+
     }
 
     public void Advance(){
-        text.GetComponent<TextAnim>().Fade(1);
 
         text.GetComponent<TextMeshProUGUI>().text = plot.GetComponent<Plot>().Advance();
 
